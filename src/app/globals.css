@@ -1,0 +1,80 @@
+@import "tailwindcss"; /* =============================================================================   connect-dutse Design System   ============================================================================= */
+@theme inline {
+  /* ---------------------------------------------------------------------------     Brand Colors     --------------------------------------------------------------------------- */ /* Primary: Earth Green */
+  --color-brand-50: #f0fdf4;
+  --color-brand-100: #dcfce7;
+  --color-brand-200: #bbf7d0;
+  --color-brand-300: #86efac;
+  --color-brand-400: #4ade80;
+  --color-brand-500: #22c55e;
+  --color-brand-600: #16a34a;
+  --color-brand-700: #166534;
+  --color-brand-800: #14532d;
+  --color-brand-900: #052e16; /* Secondary: Clay Orange */
+  --color-clay-50: #fff7ed;
+  --color-clay-100: #ffedd5;
+  --color-clay-200: #fed7aa;
+  --color-clay-300: #fdba74;
+  --color-clay-400: #fb923c;
+  --color-clay-500: #f97316;
+  --color-clay-600: #ea580c;
+  --color-clay-700: #c2410c;
+  --color-clay-800: #9a3412;
+  --color-clay-900: #7c2d12; /* Accent: Gold */
+  --color-gold-400: #fbbf24;
+  --color-gold-500: #f59e0b;
+  --color-gold-600: #d97706; /* Background */
+  --color-sand: #faf7f2;
+  --color-earth: #f3eee4; /* Neutral Text */
+  --color-text-primary: #1c1917;
+  --color-text-secondary: #57534e;
+  --color-text-disabled: #a8a29e;
+  --color-border: #e7e5e4; /* Semantic */
+  --color-success: #15803d;
+  --color-warning: #b45309;
+  --color-error: #b91c1c; /* Border radius */
+  --radius-btn: 12px;
+  --radius-card: 16px;
+  --radius-input: 12px; /* Shadows */
+  --shadow-card: 0 4px 12px rgba(0, 0, 0, 0.06);
+  --shadow-card-hover: 0 8px 24px rgba(0, 0, 0, 0.08); /* Typography */
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif; /* Spacing ΓÇö 8-point grid */
+  --spacing-1: 4px;
+  --spacing-2: 8px;
+  --spacing-3: 16px;
+  --spacing-4: 24px;
+  --spacing-5: 32px;
+  --spacing-6: 48px;
+  --spacing-7: 64px; /* Layout */
+  --max-width-content: 1280px;
+} /* =============================================================================   Base Styles   ============================================================================= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+body {
+  background-color: var(--color-sand);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.5;
+} /* =============================================================================   Focus styles ΓÇö accessibility   ============================================================================= */
+:focus-visible {
+  outline: 2px solid var(--color-brand-700);
+  outline-offset: 2px;
+} /* =============================================================================   Scrollbar   ============================================================================= */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-earth);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-text-disabled);
+  border-radius: 3px;
+}
