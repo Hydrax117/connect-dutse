@@ -1,1 +1,71 @@
-// =============================================================================// Shared TypeScript types for connect-dutse// =============================================================================// -----------------------------------------------------------------------------// Enums (mirrored from Prisma schema for client-side use)// -----------------------------------------------------------------------------export enum UserRole {  CUSTOMER = "CUSTOMER",  PRODUCT_SELLER = "PRODUCT_SELLER",  SERVICE_PROVIDER = "SERVICE_PROVIDER",  ADMIN = "ADMIN",}export enum CategoryType {  PRODUCT = "PRODUCT",  SERVICE = "SERVICE",}export enum ListingStatus {  PENDING = "PENDING",  ACTIVE = "ACTIVE",  REJECTED = "REJECTED",  SUSPENDED = "SUSPENDED",}export enum ProductCondition {  NEW = "NEW",  USED = "USED",}export enum MediaType {  IMAGE = "IMAGE",  VIDEO = "VIDEO",}export enum ReportStatus {  OPEN = "OPEN",  REVIEWED = "REVIEWED",  RESOLVED = "RESOLVED",}// -----------------------------------------------------------------------------// API response wrapper// -----------------------------------------------------------------------------export type ApiResponse<T> =  | { success: true; data: T }  | { success: false; error: string; details?: Record<string, string[]> };// -----------------------------------------------------------------------------// Pagination// -----------------------------------------------------------------------------export interface PaginationMeta {  page: number;  pageSize: number;  total: number;  totalPages: number;  hasNextPage: boolean;  hasPreviousPage: boolean;}export interface PaginatedResponse<T> {  items: T[];  meta: PaginationMeta;}// -----------------------------------------------------------------------------// Listing search filters// -----------------------------------------------------------------------------export interface ListingFilters {  query?: string;  categoryId?: string;  type?: CategoryType;  condition?: ProductCondition;  minPrice?: number;  maxPrice?: number;  latitude?: number;  longitude?: number;  radiusKm?: number;  sortBy?: "newest" | "oldest" | "price_asc" | "price_desc" | "popular";  page?: number;  pageSize?: number;}
+// Enums (mirrored from Prisma schema for client-side use)
+export enum UserRole {
+  CUSTOMER = "CUSTOMER",
+  PRODUCT_SELLER = "PRODUCT_SELLER",
+  SERVICE_PROVIDER = "SERVICE_PROVIDER",
+  ADMIN = "ADMIN",
+}
+
+export enum CategoryType {
+  PRODUCT = "PRODUCT",
+  SERVICE = "SERVICE",
+}
+
+export enum ListingStatus {
+  PENDING = "PENDING",
+  ACTIVE = "ACTIVE",
+  REJECTED = "REJECTED",
+  SUSPENDED = "SUSPENDED",
+}
+
+export enum ProductCondition {
+  NEW = "NEW",
+  USED = "USED",
+}
+
+export enum MediaType {
+  IMAGE = "IMAGE",
+  VIDEO = "VIDEO",
+}
+
+export enum ReportStatus {
+  OPEN = "OPEN",
+  REVIEWED = "REVIEWED",
+  RESOLVED = "RESOLVED",
+}
+
+// API response wrapper
+export type ApiResponse<T> =
+  | { success: true; data: T }
+  | { success: false; error: string; details?: Record<string, string[]> };
+
+// Pagination
+export interface PaginationMeta {
+  page: number;
+  pageSize: number;
+  total: number;
+  totalPages: number;
+  hasNextPage: boolean;
+  hasPreviousPage: boolean;
+}
+
+export interface PaginatedResponse<T> {
+  items: T[];
+  meta: PaginationMeta;
+}
+
+// Listing search filters
+export interface ListingFilters {
+  query?: string;
+  categoryId?: string;
+  type?: CategoryType;
+  condition?: ProductCondition;
+  minPrice?: number;
+  maxPrice?: number;
+  latitude?: number;
+  longitude?: number;
+  radiusKm?: number;
+  sortBy?: "newest" | "oldest" | "price_asc" | "price_desc" | "popular";
+  page?: number;
+  pageSize?: number;
+}

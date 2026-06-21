@@ -17,11 +17,9 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${inter.variable} h-full`}>
-      {" "}
       <body className="flex min-h-full flex-col antialiased">
-        {" "}
-        <Providers>{children}</Providers>{" "}
-      </body>{" "}
+        <Providers>{children}</Providers>
+      </body>
     </html>
   );
 }
